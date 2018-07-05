@@ -9,7 +9,7 @@ export default {
   <div class="container">
     <div class="content">
       <p class="has-text-centered">
-        <strong>Lensire</strong> by Meiku<br/>
+        <strong>Lensire</strong> by <a href="https://meiku.se">Meiku</a><br/>
       </p>
 
       <p class="has-text-centered">
@@ -23,8 +23,8 @@ export default {
                     General
                 </p>
                 <ul class="links-list">
-                    <li><a>About us</a></li>
-                    <li><a>Contact us</a></li>
+                    <li><ahref="https://meiku.se">About us</a></li>
+                    <li><a href="mailto:contact@meiku.se">Contact us</a></li>
                 </ul>
             </div>
         </div>
