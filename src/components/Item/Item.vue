@@ -11,7 +11,7 @@
     <div class="item">
       <div class="productimage">
         <div>
-          <img src="../../assets/examplelenses.jpg" />
+          <a href="/product/1"><img src="../../assets/examplelenses.jpg" /></a>
         </div>
       </div>
       <div class="info">

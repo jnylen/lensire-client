@@ -6,8 +6,16 @@ export default {
   components: {
     Item
   },
+  data () {
+    return {
+      products: []
+    }
+  },
   metaInfo: {
     title: 'Home'
+  },
+  mounted () {
+
   }
 }
 </script>
