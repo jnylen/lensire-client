@@ -23,7 +23,7 @@ export default {
                     General
                 </p>
                 <ul class="links-list">
-                    <li><ahref="https://meiku.se">About us</a></li>
+                    <li><a href="https://meiku.se">About us</a></li>
                     <li><a href="mailto:contact@meiku.se">Contact us</a></li>
                 </ul>
             </div>
