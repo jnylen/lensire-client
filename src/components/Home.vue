@@ -31,7 +31,7 @@ export default {
     <h1 class="has-text-weight-bold">Popular contact lenses - Cheapest</h1>
     <div class="columns padding-top">
       <div class="column is-four-fifths">
-        <Item/><Item/><Item/><Item/>
+        <p>Waiting on products..</p>
       </div>
       <div class="column has-text-centered">
         <img src="http://cdn.double.net/ads/affiliate-160600-SE.jpg" />

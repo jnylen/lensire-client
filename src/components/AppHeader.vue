@@ -26,7 +26,7 @@ export default {
       <router-link class="navbar-item" :to="{ name: 'Products', params: { type: 'yearly' }}">Yearly</router-link>
     </div>
     <div class="navbar-centered">
-      <a class="navbar-item" href="https://bulma.io/">
+      <a class="navbar-item" href="/">
         <span class="icon padding-right">
           <i class="mdi mdi-36px mdi-eye-outline"></i>
         </span>
@@ -34,10 +34,10 @@ export default {
       </a>
     </div>
     <div class="navbar-end">
-      <a class="navbar-item" href="https://bulma.io/">
+      <a class="navbar-item" href="/">
         Sweden
       </a>
-      <a class="navbar-item" href="https://bulma.io/">
+      <a class="navbar-item" href="/">
         SEK
       </a>
     </div>

@@ -45,7 +45,7 @@ export default {
   <div class="popular items">
     <h1 class="has-text-weight-bold">{{this.$route.params.type}} contact lenses</h1>
     <div class="columns padding-top">
-
+      <p>Waiting on products..</p>
     </div>
   </div>
 </div>
