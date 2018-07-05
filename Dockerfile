@@ -4,9 +4,9 @@ WORKDIR /app
 COPY package*.json ./
 RUN apk update && apk upgrade && \
     apk add --no-cache bash git openssh
-RUN npm install
+RUN yarn install
 COPY . .
-RUN npm run build
+RUN yarn run generate
 
 # production stage
 FROM nginx:1.15.1-alpine as production-stage
