@@ -12,7 +12,7 @@ build:
   script:
     - docker info
     - docker login registry.gitlab.com -u $DOCKER_EMAIL -p $DOCKER_PASSWORD
-    - docker pull registry.gitlab.com/meikukb/lensire/client
+    #- docker pull registry.gitlab.com/meikukb/lensire/client
     - docker build --rm=false -t registry.gitlab.com/meikukb/lensire/client .
     - docker push registry.gitlab.com/meikukb/lensire/client
   only:
