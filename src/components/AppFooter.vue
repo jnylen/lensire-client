@@ -9,7 +9,7 @@ export default {
   <div class="container">
     <div class="content">
       <p class="has-text-centered">
-        <strong>Lensire</strong> by <a href="https://meiku.se">Meiku</a><br/>
+        <strong>Lensire</strong> by <a href="https://meiku.se" style="font-color: #000">Meiku</a><br/>
       </p>
 
       <p class="has-text-centered">
