@@ -6,7 +6,7 @@ RUN apk update && apk upgrade && \
     apk add --no-cache bash git openssh
 RUN yarn install
 COPY . .
-RUN yarn run generate
+RUN yarn run build
 
 # production stage
 FROM nginx:1.15.1-alpine as production-stage
