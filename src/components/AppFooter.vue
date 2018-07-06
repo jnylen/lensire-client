@@ -47,24 +47,35 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.footer
-  padding: 20px
-  border-top: 1px solid #ddd
+.footer {
+    padding:20px;
+    border-top:1px solid #ddd;
+}
 
-.infoline a
-  color: #000
-  &:hover
-    text-decoration: underline
+.infoline {
+    a {
+        color: #000;
 
-.links-column
-  padding-top: 20px
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
 
-.links ul
-  list-style: none
-  margin-left: 0
-  padding-left: 0
-  li
-    list-style-type: none
-    a
-      color: hsl(0, 0%, 21%)
+.links-column {
+    padding-top:20px;
+}
+
+.links ul {
+    list-style: none;
+    margin-left: 0; padding-left: 0;
+
+    li {
+        list-style-type: none;
+
+        a {
+        color: hsl(0, 0%, 21%);
+        }
+    }
+}
 </style>
