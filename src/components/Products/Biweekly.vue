@@ -1,8 +1,8 @@
 <script>
-import { jsonApi } from '../api'
+import products from '@/api/products'
 
 export default {
-  name: 'Products',
+  name: 'Biweekly',
   components: {
   },
   data () {
@@ -12,11 +12,11 @@ export default {
     }
   },
   metaInfo: {
-    title: 'Products'
+    title: 'Bi-Weekly'
   },
   methods: {
     fetchProducts () {
-      jsonApi.findAll('products', {filter: {wear: this.$route.params.type}})
+      products.getAll({wear: 'biweekly'})
         .then(response => {
           this.products = response.data
           console.log(response.data)
@@ -30,9 +30,6 @@ export default {
   },
   mounted () {
     this.fetchProducts()
-  },
-  updated () {
-    this.fetchProducts()
   }
 }
 </script>
@@ -40,10 +37,10 @@ export default {
 <template>
 <div class="container">
   <div class="notification is-primary has-text-centered">
-    Here is a list of {{ this.$route.params.type }} contact lenses we currently provide pricing for.
+    Here is a list of bi-weekly contact lenses we currently provide pricing for.
   </div>
   <div class="popular items">
-    <h1 class="has-text-weight-bold">{{this.$route.params.type}} contact lenses</h1>
+    <h1 class="has-text-weight-bold">Bi-weekly contact lenses</h1>
     <div class="columns padding-top">
       <p>Waiting on products..</p>
     </div>

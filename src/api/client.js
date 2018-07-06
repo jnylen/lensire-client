@@ -2,17 +2,17 @@
 import JsonApi from 'devour-client'
 
 // Bootstrap
-export const jsonApi = new JsonApi({apiUrl: process.env.APIURL})
+const client = new JsonApi({apiUrl: process.env.APIURL})
 
 // Models
-jsonApi.define('product', {
+client.define('product', {
   name: '',
   image: '',
   wear: '',
   type: ''
 })
 
-jsonApi.define('pricing', {
+client.define('pricing', {
   link: '',
   package_amount: null,
   lastupdated: '',
@@ -48,7 +48,7 @@ jsonApi.define('pricing', {
   }
 })
 
-jsonApi.define('store', {
+client.define('store', {
   name: '',
   website: '',
   logo: '',
@@ -56,3 +56,5 @@ jsonApi.define('store', {
   delivery_countries: [],
   based_in_country: ''
 })
+
+export default client
