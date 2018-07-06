@@ -8,8 +8,8 @@ export default {
 <footer class="footer">
   <div class="container">
     <div class="content">
-      <p class="has-text-centered">
-        <strong>Lensire</strong> by <a href="https://meiku.se" style="font-color: #000">Meiku</a><br/>
+      <p class="has-text-centered infoline">
+        <strong>Lensire</strong> by <a href="https://meiku.se">Meiku</a><br/>
       </p>
 
       <p class="has-text-centered">
@@ -46,25 +46,25 @@ export default {
 </footer>
 </template>
 
-<style scoped>
-.footer {
-    padding:20px;
-    border-top:1px solid #ddd;
-}
+<style lang="scss" scoped>
+.footer
+  padding: 20px
+  border-top: 1px solid #ddd
 
-.links-column {
-    padding-top:20px;
-}
+.infoline a
+  color: #000
+  &:hover
+    text-decoration: underline
 
-.links ul {
-    list-style: none;
-    margin-left: 0; padding-left: 0;
-}
-    .links ul li {
-        list-style-type: none;
-    }
+.links-column
+  padding-top: 20px
 
-    .links ul li a {
-        color: hsl(0, 0%, 21%);
-    }
+.links ul
+  list-style: none
+  margin-left: 0
+  padding-left: 0
+  li
+    list-style-type: none
+    a
+      color: hsl(0, 0%, 21%)
 </style>
