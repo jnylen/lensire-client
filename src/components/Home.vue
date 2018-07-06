@@ -15,7 +15,6 @@ export default {
     title: 'Home'
   },
   mounted () {
-
   }
 }
 </script>
@@ -23,15 +22,16 @@ export default {
 <template>
 <div class="container">
   <div class="notification is-info has-text-centered">
-    Lensire is a contact lens pricing comparison website that compiles prices all over the world and tries to give you the best pricing for any reseller that can ship to you.
-    <br/>
-    Your chosen country is <strong>Sweden</strong> and currency is <strong>SEK</strong>
+    <p>
+      {{ $t('homepage.info') }}
+    </p>
+    <p v-html="$t('homepage.chosen', {country: 'Norway', currency: 'NOK'})"></p>
   </div>
   <div class="popular items">
-    <h1 class="has-text-weight-bold">Popular contact lenses - Cheapest</h1>
+    <h1 class="has-text-weight-bold">{{ $t('homepage.popular_header') }}</h1>
     <div class="columns padding-top">
       <div class="column is-four-fifths">
-        <p>Waiting on products..</p>
+        <p>{{ $t('waiting_on_products') }}</p>
       </div>
       <div class="column has-text-centered">
         <img src="http://cdn.double.net/ads/affiliate-160600-SE.jpg" />

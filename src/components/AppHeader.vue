@@ -17,13 +17,13 @@ export default {
   </div>
   <div id="navbarExampleTransparentExample" class="navbar-menu">
     <div class="navbar-start">
-      <router-link to="/" class="navbar-item">Home</router-link>
-      <router-link class="navbar-item" :to="{ name: 'Products', params: { type: 'daily' }}">Dailies</router-link>
-      <router-link class="navbar-item" :to="{ name: 'Products', params: { type: 'monthly' }}">Monthlies</router-link>
-      <router-link class="navbar-item" :to="{ name: 'Products', params: { type: 'three_months' }}">3 Months</router-link>
-      <router-link class="navbar-item" :to="{ name: 'Products', params: { type: 'weekly' }}">Weekly</router-link>
-      <router-link class="navbar-item" :to="{ name: 'Products', params: { type: 'biweekly' }}">Bi-Weekly</router-link>
-      <router-link class="navbar-item" :to="{ name: 'Products', params: { type: 'yearly' }}">Yearly</router-link>
+      <router-link to="/" class="navbar-item">{{ $t('header.menu.home') }}</router-link>
+      <router-link to="/products/daily" class="navbar-item">{{ $t('header.menu.daily') }}</router-link>
+      <router-link to="/products/monthly" class="navbar-item">{{ $t('header.menu.monthly') }}</router-link>
+      <router-link to="/products/three_months" class="navbar-item">{{ $t('header.menu.three_months') }}</router-link>
+      <router-link to="/products/weekly" class="navbar-item">{{ $t('header.menu.weekly') }}</router-link>
+      <router-link to="/products/biweekly" class="navbar-item">{{ $t('header.menu.biweekly') }}</router-link>
+      <router-link to="/products/yearly" class="navbar-item">{{ $t('header.menu.yearly') }}</router-link>
     </div>
     <div class="navbar-centered">
       <a class="navbar-item" href="/">

@@ -8,36 +8,34 @@ export default {
 <footer class="footer">
   <div class="container">
     <div class="content">
-      <p class="has-text-centered infoline">
-        <strong>Lensire</strong> by <a href="https://meiku.se">Meiku</a><br/>
-      </p>
+      <p class="has-text-centered infoline" v-html="$t('footer.by')"></p>
 
       <p class="has-text-centered">
-          Links marked as "Affiliate" are affiliate links and gives us money in return of you buying from there.
+          {{ $t('footer.affiliate') }}
       </p>
 
       <div class="columns is-multiline is-centered links-column">
         <div class="column is-narrow is-2">
             <div class="links">
                 <p class="menu-label">
-                    General
+                    {{ $t('footer.general') }}
                 </p>
                 <ul class="links-list">
-                    <li><router-link to="/impressum">Impressum</router-link></li>
-                    <li><a href="https://meiku.se">About us</a></li>
-                    <li><a href="mailto:contact@meiku.se">Contact us</a></li>
+                    <li><router-link to="/impressum">{{ $t('footer.general.impressum') }}</router-link></li>
+                    <li><a href="https://meiku.se">{{ $t('footer.general.about') }}</a></li>
+                    <li><a href="mailto:contact@meiku.se">{{ $t('footer.general.contact') }}</a></li>
                 </ul>
             </div>
         </div>
         <div class="column is-narrow">
             <div class="links">
                 <p class="menu-label">
-                    Legal
+                    {{ $t('footer.legal') }}
                 </p>
                 <ul class="links-list">
-                    <li><a>Terms and Conditions</a></li>
-                    <li><a>Privacy Policy</a></li>
-                    <li><a>Copyright</a></li>
+                    <li><a>{{ $t('footer.legal.terms') }}</a></li>
+                    <li><a>{{ $t('footer.legal.privacy_policy') }}</a></li>
+                    <li><a>{{ $t('footer.legal.copyright') }}</a></li>
                 </ul>
             </div>
         </div>

@@ -1,6 +1,7 @@
 <script>
 import Item from './Item/Item'
-import { jsonApi } from '../api'
+import products from '@/api/products'
+import pricings from '@/api/pricings'
 
 export default {
   name: 'Product',
@@ -20,7 +21,7 @@ export default {
   },
   methods: {
     fetchProduct () {
-      jsonApi.find('product', this.$route.params.id)
+      products.getOne({id: this.$route.params.id})
         .then(response => {
           this.product = response.data
           this.title = this.product.name
@@ -33,7 +34,7 @@ export default {
         // .finally(() => this.loading = false)
     },
     fetchPricings () {
-      jsonApi.one('product', this.$route.params.id).all('pricings').get({filter: {country: 'SE', currency: 'SEK'}})
+      pricings.getProduct({id: this.$route.params.id, country: 'SE', currency: 'SEK'})
         .then(response => {
           this.pricings = response.data
           console.log(response.data)

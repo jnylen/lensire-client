@@ -7,10 +7,26 @@ import Meta from 'vue-meta'
 import App from './App'
 import router from './router'
 
+import vuexI18n from 'vuex-i18n'
+import store from './vuex/store'
+
+// Languages
+import en from './langs/en'
+
 Vue.config.productionTip = false
 
 Vue.use(Buefy)
 Vue.use(Meta)
+Vue.use(vuexI18n.plugin, store)
+
+// Languages
+Vue.i18n.add('en', en)
+
+Vue.i18n.fallback('en')
+
+// Use browser language
+const userLang = navigator.language || navigator.userLanguage
+Vue.i18n.set(userLang)
 
 /* eslint-disable no-new */
 new Vue({
