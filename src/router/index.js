@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from '@/components/Home'
 import Product from '@/components/Product'
 import Products from '@/components/Products'
+import Impressum from '@/components/Impressum'
 
 Vue.use(Router)
 
@@ -25,6 +26,11 @@ export default new Router({
       path: '/products/:type',
       name: 'Products',
       component: Products
+    },
+    {
+      path: '/impressum',
+      name: 'Impressum',
+      component: Impressum
     }
   ]
 })
