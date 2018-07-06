@@ -23,6 +23,7 @@ export default {
                     General
                 </p>
                 <ul class="links-list">
+                    <li><router-link to="/impressum">Impressum</router-link></li>
                     <li><a href="https://meiku.se">About us</a></li>
                     <li><a href="mailto:contact@meiku.se">Contact us</a></li>
                 </ul>
@@ -54,7 +55,7 @@ export default {
 
 .infoline {
     a {
-        color: #000;
+        color: hsl(0, 0%, 21%);
 
         &:hover {
             text-decoration: underline;
