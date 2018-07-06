@@ -12,6 +12,7 @@ import store from './vuex/store'
 
 // Languages
 import en from './langs/en'
+import sv from './langs/sv'
 
 Vue.config.productionTip = false
 
@@ -21,6 +22,7 @@ Vue.use(vuexI18n.plugin, store)
 
 // Languages
 Vue.i18n.add('en', en)
+Vue.i18n.add('sv', sv)
 
 Vue.i18n.fallback('en')
 
