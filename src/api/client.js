@@ -9,7 +9,11 @@ client.define('product', {
   name: '',
   image: '',
   wear: '',
-  type: ''
+  type: '',
+  company: {
+    jsonApi: 'hasOne',
+    type: 'company'
+  }
 })
 
 client.define('pricing', {
@@ -18,6 +22,7 @@ client.define('pricing', {
   lastupdated: '',
   created: '',
   in_stock: null,
+  image: null,
   pricing_converted: {
     shipping_prices: {
       per_lens: '',
@@ -55,6 +60,10 @@ client.define('store', {
   affiliate: false,
   delivery_countries: [],
   based_in_country: ''
+})
+
+client.define('company', {
+  name: ''
 })
 
 export default client

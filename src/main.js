@@ -14,11 +14,15 @@ import store from './vuex/store'
 import en from './langs/en'
 import sv from './langs/sv'
 
+// Cookie
+import VueCookie from 'vue-cookie'
+
 Vue.config.productionTip = false
 
 Vue.use(Buefy)
 Vue.use(Meta)
 Vue.use(vuexI18n.plugin, store)
+Vue.use(VueCookie)
 
 // Languages
 Vue.i18n.add('en', en)
@@ -27,8 +31,12 @@ Vue.i18n.add('sv', sv)
 Vue.i18n.fallback('en')
 
 // Use browser language
-const userLang = navigator.language || navigator.userLanguage
-Vue.i18n.set(userLang)
+Vue.config.lang = VueCookie.get('locale') || navigator.language || navigator.userLanguage
+Vue.i18n.set(Vue.config.lang)
+
+// Country
+Vue.prototype.$country = 'US'
+Vue.prototype.$currency = 'USD'
 
 /* eslint-disable no-new */
 new Vue({

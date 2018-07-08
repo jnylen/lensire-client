@@ -8,13 +8,16 @@ export default {
   },
   data () {
     return {
-      products: []
+      products: [],
+      currency: this.$currency,
+      country: this.$country
     }
   },
   metaInfo: {
     title: 'Home'
   },
   mounted () {
+
   }
 }
 </script>
@@ -25,7 +28,7 @@ export default {
     <p>
       {{ $t('homepage.info') }}
     </p>
-    <p v-html="$t('homepage.chosen', {country: 'Norway', currency: 'NOK'})"></p>
+    <p v-html="$t('homepage.chosen', {country: country, currency: currency})"></p>
   </div>
   <div class="popular items">
     <h1 class="has-text-weight-bold">{{ $t('homepage.popular_header') }}</h1>

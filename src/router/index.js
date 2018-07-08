@@ -8,8 +8,6 @@ import Yearly from '@/components/Products/Yearly'
 import Monthly from '@/components/Products/Monthly'
 import Daily from '@/components/Products/Daily'
 import Weekly from '@/components/Products/Weekly'
-import Biweekly from '@/components/Products/Biweekly'
-import ThreeMonths from '@/components/Products/ThreeMonths'
 
 Vue.use(Router)
 
@@ -52,16 +50,6 @@ export default new Router({
       path: '/products/weekly',
       name: 'Weekly',
       component: Weekly
-    },
-    {
-      path: '/products/biweekly',
-      name: 'Biweekly',
-      component: Biweekly
-    },
-    {
-      path: '/products/three_months',
-      name: 'ThreeMonths',
-      component: ThreeMonths
     }
 
   ]

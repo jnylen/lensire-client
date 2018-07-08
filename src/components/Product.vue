@@ -13,11 +13,30 @@ export default {
       title: 'Product',
       product: {},
       pricings: [],
-      loading: true
+      loading: true,
+      filterParam: 'per_lens'
     }
   },
-  metaInfo: {
-    title: this.title
+  filters: {
+    capitalize: function (value) {
+      if (!value) return ''
+      value = value.toString()
+      return value.charAt(0).toUpperCase() + value.slice(1)
+    }
+  },
+  metaInfo () {
+    return {
+      title: this.title
+    }
+  },
+  computed: {
+    sortedPricings () {
+      const pric = this.pricings
+
+      return pric.sort((a, b) => {
+        return a.pricing_converted.shipping_prices[this.filterParam] > b.pricing_converted.shipping_prices[this.filterParam]
+      })
+    }
   },
   methods: {
     fetchProduct () {
@@ -34,7 +53,7 @@ export default {
         // .finally(() => this.loading = false)
     },
     fetchPricings () {
-      pricings.getProduct({id: this.$route.params.id, country: 'SE', currency: 'SEK'})
+      pricings.getProduct({id: this.$route.params.id})
         .then(response => {
           this.pricings = response.data
           console.log(response.data)
@@ -43,6 +62,9 @@ export default {
           console.log(error)
           this.errored = true
         })
+    },
+    sortPricings (filterParam) {
+      this.filterParam = filterParam
     }
   },
   mounted () {
@@ -55,25 +77,38 @@ export default {
 <template>
 <div class="container">
   <div class="notification is-primary">
-      <div class="image">
+      <div class="image" v-if="product.image">
           <img :src="product.image" />
       </div>
       <div class="data">
         <h1>{{product.name}}</h1>
-        <p>
-            Focus Dailies från Ciba Vision är en av världens mest sålda endagslinser. De här linserna är kända för sin komfort och sina återfuktande egenskaper. Linserna är tillverkade i ett högteknologiskt material som innehåller ett så kallat biokompatibelt ämne, vilket fungerar som ett tår-substitut. Detta ämne gör att varje gång du blinkar återfuktas dina ögon på ett naturligt sätt. Det tunna materialet förhindrar även effektivt att det bildas proteinbeläggningar på linsen.
-        </p>
         <div class="padding-top">
-            <span class="tag is-info">Daily contacts</span>
-            <span class="tag is-primary">Manufacutured by Alcon</span>
+            <span class="tag is-info">{{ product.wear | capitalize }} contacts</span>
+            <span class="tag is-dark" v-if="product.type">{{ product.type | capitalize }}</span>
+            <span class="tag is-primary" v-if="product.company">Manufactured by {{ product.company.name }}</span>
         </div>
       </div>
   </div>
   <div class="popular items">
-    <h1 class="has-text-weight-bold">Cheapest resellers</h1>
-    <div class="columns padding-top">
-      <div class="column is-four-fifths">
-        <Item/><Item/><Item/><Item/>
+    <div class="columns">
+      <div class="column is-10">
+        <div class="filterbox select is-pulled-right">
+          <select v-model="filterParam">
+            <option value="per_lens">Sort by per lens price</option>
+            <option value="per_box">Sort by per box price</option>
+          </select>
+        </div>
+        <h1 class="has-text-weight-bold">Cheapest resellers</h1>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column is-10">
+        <div v-if="sortedPricings.length">
+          <Item v-for="price in sortedPricings" v-bind:key="price.id" v-bind:data="price" />
+        </div>
+        <div v-if="!sortedPricings.length">
+          Currently we have no prices for this contact lens. Sorry about that.
+        </div>
       </div>
       <div class="column has-text-centered">
         <img src="http://cdn.double.net/ads/affiliate-160600-SE.jpg" />
@@ -88,6 +123,11 @@ export default {
     display:inline-block;
 }
 
+.filterbox {
+  display:inline-block;
+  margin-top:-10px;
+}
+
 .data {
 
     h1 {
@@ -100,5 +140,9 @@ export default {
 
 .padding-top {
    padding-top:20px;
+}
+
+.popular.items {
+  padding-top:10px;
 }
 </style>

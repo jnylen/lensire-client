@@ -1,6 +1,14 @@
 <script>
+import user from '@/api/user'
+
 export default {
-  name: 'AppHeader'
+  name: 'AppHeader',
+  data () {
+    return {
+      country: user.getCountry(),
+      currency: user.getCurrency()
+    }
+  }
 }
 </script>
 
@@ -20,9 +28,7 @@ export default {
       <router-link to="/" class="navbar-item">{{ $t('header.menu.home') }}</router-link>
       <router-link to="/products/daily" class="navbar-item">{{ $t('header.menu.daily') }}</router-link>
       <router-link to="/products/monthly" class="navbar-item">{{ $t('header.menu.monthly') }}</router-link>
-      <router-link to="/products/three_months" class="navbar-item">{{ $t('header.menu.three_months') }}</router-link>
       <router-link to="/products/weekly" class="navbar-item">{{ $t('header.menu.weekly') }}</router-link>
-      <router-link to="/products/biweekly" class="navbar-item">{{ $t('header.menu.biweekly') }}</router-link>
       <router-link to="/products/yearly" class="navbar-item">{{ $t('header.menu.yearly') }}</router-link>
     </div>
     <div class="navbar-centered">
@@ -35,10 +41,10 @@ export default {
     </div>
     <div class="navbar-end">
       <a class="navbar-item" href="/">
-        Sweden
+        {{ country }}
       </a>
       <a class="navbar-item" href="/">
-        SEK
+        {{ currency }}
       </a>
     </div>
   </div>
@@ -50,7 +56,7 @@ export default {
         position: absolute;
         margin-top:5px;
         left: 50%;
-        margin-left: -36px; // 50% in my case
+        margin-left: -36px;
         height: 100%;
         display: flex;
         align-items: center;

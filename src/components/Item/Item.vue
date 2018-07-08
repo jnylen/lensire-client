@@ -1,34 +1,35 @@
 <template>
 <div class="box box-item has-ribbon">
-  <div class="ribbon is-small is-warning affiliate-ribbon">Affiliate</div>
+  <div class="ribbon is-small is-warning affiliate-ribbon" v-if="data.store.affiliate">Affiliate</div>
   <div class="data">
     <div class="reseller has-ribbon-left">
-      <div class="ribbon is-small is-info special-ribbon">US</div>
+      <div class="ribbon is-small is-info special-ribbon">{{ data.store.based_in_country }}</div>
       <div class="logo">
-        <img src="https://img.lenslogistics.com//yourlenses/images/se/logo.png" />
+        <img :src="data.store.logo" />
       </div>
     </div>
     <div class="item">
       <div class="productimage">
-        <div>
-          <a href="/product/1"><img src="../../assets/examplelenses.jpg" /></a>
+        <div class="image">
+          <a :href="data.product_id"><img v-if="data.image" :src="data.image" /></a>
         </div>
       </div>
       <div class="info">
-        <h5>Focus Dailies</h5>
+        <h5>{{ data.product.name }}</h5>
         <div>
-          <span class="tag is-success">Free shipping</span>
-          <span class="tag is-info">Pack of 30</span>
-          <span class="tag is-primary">In stock</span>
+          <span class="tag is-success" v-if="!data.pricing_converted.shipping_prices.amount">Free shipping</span>
+          <span class="tag is-dark" v-if="data.pricing_converted.shipping_prices.amount">{{ data.pricing_converted.shipping_prices.amount | round }} {{ data.pricing_converted.currency }} for shipping</span>
+          <span class="tag is-info">Pack of {{ data.package_amount }}</span>
+          <span class="tag is-primary" v-if="data.in_stock">In stock</span>
         </div>
       </div>
     </div>
     <div class="pricing is-pulled-right">
         <div class="container">
-          <span class="total">
-            159 kr <i>per box</i>
-          </span>
-          <span class="perlens">4.82 kr per lens</span>
+          <a class="total" :href="data.link" rel="nofollow">
+            {{ data.pricing_converted.shipping_prices.per_box | round }} {{ data.pricing_converted.currency }} &raquo;
+          </a>
+          <span class="perlens">{{ data.pricing_converted.shipping_prices.per_lens | round }} {{ data.pricing_converted.currency }} per lens</span>
         </div>
     </div>
   </div>
@@ -36,8 +37,24 @@
 </template>
 
 <script>
+
 export default {
-  name: 'Item'
+  name: 'Item',
+  props: ['data'],
+  filters: {
+    round: function (value, decimals) {
+      if (!value) {
+        value = 0
+      }
+
+      if (!decimals) {
+        decimals = 2
+      }
+
+      value = Math.round(value * Math.pow(10, decimals)) / Math.pow(10, decimals)
+      return value
+    }
+  }
 }
 </script>
 
@@ -90,9 +107,19 @@ export default {
         padding-left:10px;
         flex: none;
         height:100%;
+        width:80px;
+        text-align:center;
 
-        img {
-          max-height:50px;
+        .image {
+          display:inline-block;
+          vertical-align: middle;
+          height:100%;
+
+          img {
+            max-height:50px;
+            max-width:80px;
+            vertical-align: middle;
+          }
         }
       }
 
@@ -120,25 +147,25 @@ export default {
       }
 
       .container {
-        width:70%;
+        width:100%;
         float:right;
         height:100%;
+        padding-top:10px;
+        margin-bottom:-10px;
 
-        span.total {
+        a.total {
           float:right;
-          display:inline-block;
-          line-height:50px;
           font-size:24px;
           font-weight:bold;
+          color:#000;
 
-          i {
-            font-weight:normal;
-            font-size:12px;
+          &:hover {
+            text-decoration: underline;
           }
         }
 
         span.perlens {
-          line-height:50px;
+          line-height:35px;
         }
       }
     }
