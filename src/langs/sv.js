@@ -20,7 +20,21 @@ const sv = {
   'footer.legal': 'Legal',
   'footer.legal.terms': 'Villkor',
   'footer.legal.privacy_policy': 'Integritetspolicy',
-  'footer.legal.copyright': 'Upphovsrätt'
+  'footer.legal.copyright': 'Upphovsrätt',
+  'product.manufacturer': 'Tillverkad av {company}',
+  'product.cheapest_resellers': 'Billigaste återförsäljare',
+  'product.sort_by.per_lens': 'Sortera på pris per lins',
+  'product.sort_by.per_box': 'Sortera på pris per box',
+  'product.shipping_prices_included': 'Pris för frakt är inkluderat i priserna för per lins och total priset.',
+  'pricing.pack': '{amount}-pack',
+  'pricing.shipping.free': 'Fri frakt',
+  'pricing.shipping.cost': 'Frakt på {amount} {currency}',
+  'pricing.in_stock': 'I lager',
+  'pricing.not_in_stock': 'Ej i lager',
+  'pricing.per_lens': '{amount} {currency} per lins',
+  'pricing.affiliate': 'Affiliate',
+  'pricing.per_box': '{amount} {currency} &raquo;',
+  'product.empty': 'Vi har just nu inga priser för denna lins. Kom tillbaka senare!'
 }
 
 export default sv

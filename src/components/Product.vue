@@ -1,12 +1,12 @@
 <script>
-import Item from './Item/Item'
+import PricingItem from './PricingItem'
 import products from '@/api/products'
 import pricings from '@/api/pricings'
 
 export default {
   name: 'Product',
   components: {
-    Item
+    PricingItem
   },
   data () {
     return {
@@ -86,7 +86,7 @@ export default {
             <span class="tag is-info">{{ product.wear | capitalize }} contacts</span>
             <span class="tag is-dark" v-if="product.type">{{ product.type | capitalize }}</span>
             <br v-if="product.company" />
-            <span class="tag is-primary" v-if="product.company">Manufactured by {{ product.company.name }}</span>
+            <span class="tag is-primary" v-if="product.company">{{ $t('product.manufacturer', {company: product.company.name}) }}</span>
         </div>
       </div>
   </div>
@@ -95,20 +95,23 @@ export default {
       <div class="column is-10">
         <div class="filterbox select is-pulled-right">
           <select v-model="filterParam">
-            <option value="per_lens">Sort by per lens price</option>
-            <option value="per_box">Sort by per box price</option>
+            <option value="per_lens">{{ $t('product.sort_by.per_lens') }}</option>
+            <option value="per_box">{{ $t('product.sort_by.per_box') }}</option>
           </select>
         </div>
-        <h1 class="has-text-weight-bold">Cheapest resellers</h1>
+        <h1 class="has-text-weight-bold">{{ $t('product.cheapest_resellers') }}</h1>
       </div>
     </div>
     <div class="columns">
       <div class="column is-10">
         <div v-if="sortedPricings.length">
-          <Item v-for="price in sortedPricings" v-bind:key="price.id" v-bind:data="price" />
+          <PricingItem v-for="price in sortedPricings" v-bind:key="price.id" v-bind:data="price" />
         </div>
         <div v-if="!sortedPricings.length">
-          Currently we have no prices for this contact lens. Sorry about that.
+          {{ $t('product.empty') }}
+        </div>
+        <div class="shippingprices has-text-centered" v-if="sortedPricings.length">
+          {{ $t('product.shipping_prices_included') }}
         </div>
       </div>
       <div class="column has-text-centered">

@@ -1,6 +1,6 @@
 <template>
 <div class="box box-item has-ribbon">
-  <div class="ribbon is-small is-warning affiliate-ribbon" v-if="data.store.affiliate">Affiliate</div>
+  <div class="ribbon is-small is-warning affiliate-ribbon" v-if="data.store.affiliate">{{ $t('pricing.affiliate') }}</div>
   <div class="data">
     <div class="reseller has-ribbon-left">
       <div class="ribbon is-small is-info special-ribbon">{{ data.store.based_in_country }}</div>
@@ -17,19 +17,17 @@
       <div class="info">
         <h5>{{ data.product.name }}</h5>
         <div>
-          <span class="tag is-success" v-if="!data.pricing_converted.shipping_prices.amount">Free shipping</span>
-          <span class="tag is-dark" v-if="data.pricing_converted.shipping_prices.amount">{{ data.pricing_converted.shipping_prices.amount | round }} {{ data.pricing_converted.currency }} for shipping</span>
-          <span class="tag is-info">Pack of {{ data.package_amount }}</span>
-          <span class="tag is-primary" v-if="data.in_stock">In stock</span>
+          <span class="tag is-success" v-if="!data.pricing_converted.shipping_prices.amount">{{ $t('pricing.shipping.free') }}</span>
+          <span class="tag is-dark" v-if="data.pricing_converted.shipping_prices.amount">{{ $t('pricing.shipping.cost', {amount: rounded(data.pricing_converted.shipping_prices.amount), currency: data.pricing_converted.currency}) }}</span>
+          <span class="tag is-info">{{ $t('pricing.pack', {amount: data.package_amount}) }}</span>
+          <span class="tag is-primary" v-if="data.in_stock">{{ $t('pricing.in_stock') }}</span>
         </div>
       </div>
     </div>
     <div class="pricing is-pulled-right">
         <div class="container">
-          <a class="total" :href="data.link" rel="nofollow">
-            {{ data.pricing_converted.shipping_prices.per_box | round }} {{ data.pricing_converted.currency }} &raquo;
-          </a>
-          <span class="perlens">{{ data.pricing_converted.shipping_prices.per_lens | round }} {{ data.pricing_converted.currency }} per lens</span>
+          <a class="total" :href="data.link" rel="nofollow" v-html="$t('pricing.per_box', {amount: rounded(data.pricing_converted.shipping_prices.per_box), currency: data.pricing_converted.currency})"></a>
+          <span class="perlens">{{ $t('pricing.per_lens', {amount: rounded(data.pricing_converted.shipping_prices.per_lens, 2), currency: data.pricing_converted.currency}) }}</span>
         </div>
     </div>
   </div>
@@ -39,21 +37,21 @@
 <script>
 
 export default {
-  name: 'Item',
+  name: 'PricingItem',
   props: ['data'],
-  filters: {
-    round: function (value, decimals) {
-      if (!value) {
-        value = 0
-      }
+  methods: {
+      rounded: function(value, decimals) {
+        if (!value) {
+            value = 0
+        }
 
-      if (!decimals) {
-        decimals = 2
-      }
+        if (!decimals) {
+            decimals = 0
+        }
 
-      value = Math.round(value * Math.pow(10, decimals)) / Math.pow(10, decimals)
-      return value
-    }
+        value = Math.round(value * Math.pow(10, decimals)) / Math.pow(10, decimals)
+        return value
+      }
   }
 }
 </script>

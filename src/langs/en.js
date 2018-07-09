@@ -20,7 +20,21 @@ const en = {
   'footer.legal': 'Legal',
   'footer.legal.terms': 'Terms and Conditions',
   'footer.legal.privacy_policy': 'Privacy Policy',
-  'footer.legal.copyright': 'Copyright'
+  'footer.legal.copyright': 'Copyright',
+  'product.manufacturer': 'Manufactured by {company}',
+  'product.cheapest_resellers': 'Cheapest resellers',
+  'product.sort_by.per_lens': 'Sort price by per lens',
+  'product.sort_by.per_box': 'Sort price by per box',
+  'product.shipping_prices_included': 'The price per lens and total price has shipping fee included.',
+  'pricing.pack': 'Pack of {amount}',
+  'pricing.shipping.free': 'Free shipping',
+  'pricing.shipping.cost': '{amount} {currency} for shipping',
+  'pricing.in_stock': 'In stock',
+  'pricing.not_in_stock': 'Not in stock',
+  'pricing.per_lens': '{amount} {currency} per lens',
+  'pricing.affiliate': 'Affiliate',
+  'pricing.per_box': '{amount} {currency} &raquo;',
+  'pricing.empty': 'Currently we have no prices for this contact lens. Sorry about that.'
 }
 
 export default en

@@ -1,10 +1,8 @@
 <script>
-import Item from './Item/Item'
-
 export default {
   name: 'Home',
   components: {
-    Item
+
   },
   data () {
     return {
