@@ -18,7 +18,7 @@
         <h5>{{ data.product.name }}</h5>
         <div>
           <span class="tag is-success" v-if="!data.pricing_converted.shipping_prices.amount">{{ $t('pricing.shipping.free') }}</span>
-          <span class="tag is-dark" v-if="data.pricing_converted.shipping_prices.amount">{{ $t('pricing.shipping.cost', {amount: rounded(data.pricing_converted.shipping_prices.amount), currency: data.pricing_converted.currency}) }}</span>
+          <span class="tag is-dark" v-if="data.pricing_converted.shipping_prices.amount">{{ $t('pricing.shipping.cost', {amount: rounded(data.pricing_converted.shipping_prices.amount, 2), currency: data.pricing_converted.currency}) }}</span>
           <span class="tag is-info">{{ $t('pricing.pack', {amount: data.package_amount}) }}</span>
           <span class="tag is-primary" v-if="data.in_stock">{{ $t('pricing.in_stock') }}</span>
         </div>
@@ -26,7 +26,7 @@
     </div>
     <div class="pricing is-pulled-right">
         <div class="container">
-          <a class="total" :href="data.link" rel="nofollow" v-html="$t('pricing.per_box', {amount: rounded(data.pricing_converted.shipping_prices.per_box), currency: data.pricing_converted.currency})"></a>
+          <a class="total" :href="data.link" rel="nofollow" v-html="$t('pricing.per_box', {amount: rounded(data.pricing_converted.shipping_prices.per_box, 2), currency: data.pricing_converted.currency})"></a>
           <span class="perlens">{{ $t('pricing.per_lens', {amount: rounded(data.pricing_converted.shipping_prices.per_lens, 2), currency: data.pricing_converted.currency}) }}</span>
         </div>
     </div>
