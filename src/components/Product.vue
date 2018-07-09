@@ -77,14 +77,15 @@ export default {
 <template>
 <div class="container">
   <div class="notification is-primary">
-      <div class="image" v-if="product.image">
+      <div class="data">
+        <div class="image" v-if="product.image">
           <img :src="product.image" />
       </div>
-      <div class="data">
         <h1>{{product.name}}</h1>
-        <div class="padding-top">
+        <div class="tags2">
             <span class="tag is-info">{{ product.wear | capitalize }} contacts</span>
             <span class="tag is-dark" v-if="product.type">{{ product.type | capitalize }}</span>
+            <br v-if="product.company" />
             <span class="tag is-primary" v-if="product.company">Manufactured by {{ product.company.name }}</span>
         </div>
       </div>
@@ -129,9 +130,21 @@ export default {
 }
 
 .data {
+    text-align:center;
+
+    .image {
+      img {
+        max-height:160px;
+        width:auto;
+      }
+    }
 
     h1 {
       font-weight:bold;
+    }
+
+    .tags2 {
+      padding-top:20px;
     }
 }
 .container {

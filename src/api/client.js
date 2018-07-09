@@ -63,7 +63,8 @@ client.define('store', {
 })
 
 client.define('company', {
-  name: ''
+  name: '',
+  logo: ''
 })
 
 export default client

@@ -3,8 +3,9 @@
     <router-link :to="{ name: 'Product', params: { id: data.id }}">
     <div class="card">
         <div class="card-image">
-            <figure class="image is-4by3">
-                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+            <figure class="image is-2by4">
+                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image" v-if="!data.image" />
+                <img :src="data.image" v-if="data.image" />
             </figure>
         </div>
         <div class="card-content">
@@ -31,8 +32,22 @@ export default {
 <style lang="scss" scoped>
     .card {
         height:100%;
+        
+        .card-image {
+            text-align:center;
+            padding:5px;
+            height:120px;
+
+            img {
+                margin: 0 auto;
+                max-height:120px;
+                width:auto;
+            }
+        }
+        
         .card-content {
             padding:10px;
+            padding-top:20px;
         }
     }
 </style>
