@@ -86,6 +86,9 @@ export default {
     <div class="columns is-multiline padding-top" v-if="popularProducts.length">
       <ProductItem v-for="item in popularProducts" v-bind:key="item.id" v-bind:data="item" />
     </div>
+    <div class="columns is-multiline padding-top" v-if="!popularProducts.length">
+      <p>Currently no products in the database</p>
+    </div>
   </div>
 </div>
 </template>
