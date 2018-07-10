@@ -83,8 +83,8 @@ export default {
       </div>
         <h1>{{product.name}}</h1>
         <div class="tags2">
-            <span class="tag is-info">{{ product.wear | capitalize }} contacts</span>
-            <span class="tag is-dark" v-if="product.type">{{ product.type | capitalize }}</span>
+            <span class="tag is-info">{{ $t('product.type.' + product.wear) }}</span>
+            <span class="tag is-dark" v-if="product.type">{{ $t('product.type.' + product.type) }}</span>
             <br v-if="product.company" />
             <span class="tag is-primary" v-if="product.company">{{ $t('product.manufacturer', {company: product.company.name}) }}</span>
         </div>
