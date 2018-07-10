@@ -152,9 +152,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~bulma/sass/utilities/_all";
-@import "~bulma/sass/elements/form.sass";
-
 .vbta {
   width: 100%;
   position: relative;
