@@ -34,14 +34,15 @@ Vue.i18n.fallback('en')
 Vue.config.lang = VueCookie.get('locale') || navigator.language || navigator.userLanguage
 Vue.i18n.set(Vue.config.lang)
 
-// Country
-Vue.prototype.$country = 'US'
-Vue.prototype.$currency = 'USD'
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
+  created () {
+    this.$store.dispatch('getProducts')
+    this.$store.dispatch('getUser')
+  },
   components: { App },
   template: '<App/>'
 })

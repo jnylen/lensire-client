@@ -1,13 +1,18 @@
 <script>
-import user from '@/api/user'
+import { mapGetters, mapState } from 'vuex'
+import {DoubleBounce} from 'vue-loading-spinner'
 
 export default {
   name: 'AppHeader',
-  data () {
-    return {
-      country: user.getCountry(),
-      currency: user.getCurrency()
-    }
+  components: {
+    DoubleBounce
+  },
+  computed: {
+    ...mapGetters([
+      'getCountry',
+      'getCurrency'
+    ]),
+    ...mapState(['loading'])
   }
 }
 </script>
@@ -23,6 +28,9 @@ export default {
       <span></span>
     </div>
   </div>
+  <div class="navbar-centered" v-if="loading">
+    <double-bounce />
+  </div>
   <div class="navbar-menu">
     <div class="navbar-start">
       <router-link to="/products/daily" class="navbar-item">{{ $t('header.menu.daily') }}</router-link>
@@ -32,10 +40,10 @@ export default {
     </div>
     <div class="navbar-end">
       <a class="navbar-item" href="/">
-        {{ country }}
+        {{ getCountry }}
       </a>
       <a class="navbar-item" href="/">
-        {{ currency }}
+        {{ getCurrency }}
       </a>
     </div>
   </div>
@@ -45,7 +53,7 @@ export default {
 <style>
 .navbar-centered {
         position: absolute;
-        margin-top:5px;
+        margin-top:0px;
         left: 50%;
         margin-left: -36px;
         height: 100%;
