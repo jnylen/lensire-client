@@ -3,9 +3,7 @@ const sv = {
   'header.menu.home': 'Hem',
   'header.menu.daily': 'Endagslinser',
   'header.menu.monthly': 'Månadslinser',
-  'header.menu.three_months': '3 Månadslinser',
   'header.menu.weekly': 'Veckolinser',
-  'header.menu.biweekly': 'Varannan vecka',
   'header.menu.yearly': 'Årslinser',
   'homepage.info': 'Lensire är en webbplats för jämförelse av kontaktlinser som sammanställer priser över hela världen och försöker ge dig den bästa prissättningen för alla återförsäljare som kan leverera till dig.',
   'homepage.chosen': 'Ditt valda land är <strong>{country}</strong> och valutan <strong>{currency}</strong>',
@@ -34,7 +32,21 @@ const sv = {
   'pricing.per_lens': '{amount} {currency} per lins',
   'pricing.affiliate': 'Affiliate',
   'pricing.per_box': '{amount} {currency} &raquo;',
-  'product.empty': 'Vi har just nu inga priser för denna lins. Kom tillbaka senare!'
+  'product.empty': 'Vi har just nu inga priser för denna lins. Kom tillbaka senare!',
+  'product.type.daily': 'Endagslins',
+  'product.type.monthly': 'Månadslins',
+  'product.type.weekly': 'Veckolins',
+  'product.type.yearly': 'Årslins',
+  'product.type.color': 'Färglins',
+  'product.type.toric': 'Torisk',
+  'product.type.spherical': 'Sfärisk',
+  'product.type.multifocal': 'Multifokal',
+  'product.type.bifocal': 'Bifokal',
+  'product.type.monovision': 'Monovision',
+  'product.type.conventional': 'Conventional',
+  'product.type.rigid_gas': 'Gas',
+  'product.type.permeable': 'Permeable',
+  'product.type.hard': 'Hård'
 }
 
 export default sv

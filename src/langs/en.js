@@ -3,9 +3,7 @@ const en = {
   'header.menu.home': 'Home',
   'header.menu.daily': 'Dailies',
   'header.menu.monthly': 'Monthlies',
-  'header.menu.three_months': '3 Months',
   'header.menu.weekly': 'Weekly',
-  'header.menu.biweekly': 'Bi-Weekly',
   'header.menu.yearly': 'Yearly',
   'homepage.info': 'Lensire is a contact lens pricing comparison website that compiles prices all over the world and tries to give you the best pricing for any reseller that can ship to you.',
   'homepage.chosen': 'Your chosen country is <strong>{country}</strong> and currency is <strong>{currency}</strong>',
@@ -34,7 +32,21 @@ const en = {
   'pricing.per_lens': '{amount} {currency} per lens',
   'pricing.affiliate': 'Affiliate',
   'pricing.per_box': '{amount} {currency} &raquo;',
-  'pricing.empty': 'Currently we have no prices for this contact lens. Sorry about that.'
+  'pricing.empty': 'Currently we have no prices for this contact lens. Sorry about that.',
+  'product.type.daily': 'Daily contacts',
+  'product.type.monthly': 'Monthly contacts',
+  'product.type.weekly': 'Weekly contacts',
+  'product.type.yearly': 'Yearly contacts',
+  'product.type.color': 'Colour',
+  'product.type.toric': 'Toric',
+  'product.type.spherical': 'Spherical',
+  'product.type.multifocal': 'Multifocal',
+  'product.type.bifocal': 'Bifocal',
+  'product.type.monovision': 'Monovision',
+  'product.type.conventional': 'Conventional',
+  'product.type.rigid_gas': 'Rigid gas',
+  'product.type.permeable': 'Permeable',
+  'product.type.hard': 'Hard'
 }
 
 export default en
