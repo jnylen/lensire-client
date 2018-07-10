@@ -53,10 +53,6 @@ export default {
 
 <template>
 <div class="container">
-  <p style="padding-bottom:10px;text-align:center;">
-    Please note we only have data for Sweden, USA and Canada for the time being.<br/>
-    And you are being matched towards the country you are coming from, so pricing might be missing.
-  </p>
   <div class="notification is-info has-text-centered">
     <p>
       {{ $t('homepage.info') }}
@@ -70,7 +66,7 @@ export default {
       <ProductItem v-for="item in getPopularProducts" v-bind:key="item.id" v-bind:data="item" />
     </div>
     <div class="columns is-multiline padding-top" v-if="!getPopularProducts.length">
-      <p>Currently no products in the database</p>
+      <p>{{ $t('no_data') }}</p>
     </div>
   </div>
 </div>

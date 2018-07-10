@@ -44,9 +44,8 @@ export default {
     Here is a list of yearly contact lenses we currently provide pricing for.
   </div>
   <div class="popular items">
-    <h1 class="has-text-weight-bold">Yearly contact lenses</h1>
     <div class="columns padding-top" v-if="!sortedProducts.length">
-      <p>Currently no products in the database</p>
+      <p>{{ $t('no_data') }}</p>
     </div>
     <div class="columns padding-top is-multiline" v-if="sortedProducts.length">
       <ProductItem v-for="item in sortedProducts" v-bind:key="item.id" v-bind:data="item" />

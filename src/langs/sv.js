@@ -46,7 +46,8 @@ const sv = {
   'product.type.conventional': 'Conventional',
   'product.type.rigid_gas': 'Gas',
   'product.type.permeable': 'Permeable',
-  'product.type.hard': 'Hård'
+  'product.type.hard': 'Hård',
+  'no_data': 'Just nu så finns det inga produkter i databasen.'
 }
 
 export default sv
