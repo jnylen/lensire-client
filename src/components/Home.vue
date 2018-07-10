@@ -4,11 +4,10 @@ export default {
   components: {
 
   },
+  props: ['country', 'currency'],
   data () {
     return {
-      products: [],
-      currency: this.$currency,
-      country: this.$country
+      products: []
     }
   },
   metaInfo: {
@@ -35,7 +34,7 @@ export default {
         <p>{{ $t('waiting_on_products') }}</p>
       </div>
       <div class="column has-text-centered">
-        <img src="http://cdn.double.net/ads/affiliate-160600-SE.jpg" />
+        <!-- ADS -->
       </div>
     </div>
   </div>
