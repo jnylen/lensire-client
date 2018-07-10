@@ -8,7 +8,7 @@ const en = {
   'homepage.info': 'Lensire is a contact lens pricing comparison website that compiles prices all over the world and tries to give you the best pricing for any reseller that can ship to you.',
   'homepage.chosen': 'Your chosen country is <strong>{country}</strong> and currency is <strong>{currency}</strong>',
   'homepage.popular_header': 'Popular contact lenses',
-  'products.info': 'Here is a list of {type} contact lenses we currently provide pricing for.',
+  'products.info': 'Here is a list of {type} we currently provide pricing for.',
   'footer.by': '<strong>Lensire</strong> by <strong>Meiku</strong>',
   'footer.affiliate': 'Links marked as "Affiliate" are affiliate links and gives us money in return of you buying from there.',
   'footer.general': 'General',
@@ -46,7 +46,8 @@ const en = {
   'product.type.conventional': 'Conventional',
   'product.type.rigid_gas': 'Rigid gas',
   'product.type.permeable': 'Permeable',
-  'product.type.hard': 'Hard'
+  'product.type.hard': 'Hard',
+  'no_data': 'Currently no products in the database'
 }
 
 export default en

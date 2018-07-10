@@ -59,7 +59,7 @@ client.define('store', {
   website: '',
   logo: '',
   affiliate: false,
-  delivery_countries: [],
+  shipping_countries: [],
   based_in_country: ''
 })
 

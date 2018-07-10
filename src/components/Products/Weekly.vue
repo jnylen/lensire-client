@@ -1,5 +1,5 @@
 <script>
-import products from '@/api/products'
+import { mapGetters } from 'vuex'
 import ProductItem from './ProductItem'
 
 export default {
@@ -9,7 +9,6 @@ export default {
   },
   data () {
     return {
-      products: [],
       loading: true
     }
   },
@@ -17,6 +16,9 @@ export default {
     title: 'Weeklies'
   },
   computed: {
+    ...mapGetters([
+      'getProductsByWear'
+    ]),
     sortedProducts: function () {
       function compare (a, b) {
         if (a.name < b.name) {
@@ -28,27 +30,10 @@ export default {
         return 0
       }
 
-      const newprods = this.products
+      const newprods = this.getProductsByWear('weekly')
 
       return newprods.sort(compare)
     }
-  },
-  methods: {
-    fetchProducts () {
-      products.getAll({wear: 'weekly'})
-        .then(response => {
-          this.products = response.data.sort()
-          console.log(response.data)
-        })
-        .catch(error => {
-          console.log(error)
-          this.errored = true
-        })
-        // .finally(() => this.loading = false)
-    }
-  },
-  mounted () {
-    this.fetchProducts()
   }
 }
 </script>
@@ -59,11 +44,10 @@ export default {
     Here is a list of weekly contact lenses we currently provide pricing for.
   </div>
   <div class="popular items">
-    <h1 class="has-text-weight-bold">Weekly contact lenses</h1>
-    <div class="columns padding-top" v-if="!products.length">
-      <p>Currently no products in the database</p>
+    <div class="columns padding-top" v-if="!sortedProducts.length">
+      <p>{{ $t('no_data') }}</p>
     </div>
-    <div class="columns padding-top is-multiline" v-if="products.length">
+    <div class="columns padding-top is-multiline" v-if="sortedProducts.length">
       <ProductItem v-for="item in sortedProducts" v-bind:key="item.id" v-bind:data="item" />
     </div>
   </div>

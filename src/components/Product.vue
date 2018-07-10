@@ -1,7 +1,7 @@
 <script>
 import PricingItem from './PricingItem'
-import products from '@/api/products'
 import pricings from '@/api/pricings'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'Product',
@@ -10,18 +10,9 @@ export default {
   },
   data () {
     return {
-      title: 'Product',
-      product: {},
       pricings: [],
       loading: true,
       filterParam: 'per_lens'
-    }
-  },
-  filters: {
-    capitalize: function (value) {
-      if (!value) return ''
-      value = value.toString()
-      return value.charAt(0).toUpperCase() + value.slice(1)
     }
   },
   metaInfo () {
@@ -30,30 +21,35 @@ export default {
     }
   },
   computed: {
+    ...mapGetters([
+      'getProductById',
+      'getCurrency',
+      'getCountry'
+    ]),
     sortedPricings () {
       const pric = this.pricings
 
       return pric.sort((a, b) => {
         return a.pricing_converted.shipping_prices[this.filterParam] > b.pricing_converted.shipping_prices[this.filterParam]
       })
+    },
+    product () {
+      return this.getProductById(this.$route.params.id)
+    },
+    gC () {
+      return this.getCountry
+    },
+    title () {
+      if (this.product) {
+        return this.product.name
+      } else {
+        return 'Product'
+      }
     }
   },
   methods: {
-    fetchProduct () {
-      products.getOne({id: this.$route.params.id})
-        .then(response => {
-          this.product = response.data
-          this.title = this.product.name
-          console.log(response.data)
-        })
-        .catch(error => {
-          console.log(error)
-          this.errored = true
-        })
-        // .finally(() => this.loading = false)
-    },
     fetchPricings () {
-      pricings.getProduct({id: this.$route.params.id})
+      pricings.getProduct({id: this.$route.params.id}, {currency: this.getCurrency, country: this.getCountry})
         .then(response => {
           this.pricings = response.data
           console.log(response.data)
@@ -67,16 +63,22 @@ export default {
       this.filterParam = filterParam
     }
   },
+  watch: {
+    gC () {
+      this.fetchPricings()
+    }
+  },
   mounted () {
-    this.fetchProduct()
-    this.fetchPricings()
+    if (this.gC) {
+      this.fetchPricings()
+    }
   }
 }
 </script>
 
 <template>
 <div class="container">
-  <div class="notification is-primary">
+  <div class="notification is-primary" v-if="product">
       <div class="data">
         <div class="image" v-if="product.image">
           <img :src="product.image" />
@@ -90,7 +92,7 @@ export default {
         </div>
       </div>
   </div>
-  <div class="popular items">
+  <div class="popular items" v-if="product">
     <div class="columns">
       <div class="column is-10">
         <div class="filterbox select is-pulled-right">
