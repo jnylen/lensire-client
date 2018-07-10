@@ -20,6 +20,7 @@
     "bulma-ribbon": "^0.1.1",
     "devour-client": "^2.0.13",
     "flag-icon-css": "^3.0.0",
+    "lodash.debounce": "^4.0.8",
     "vue": "^2.5.2",
     "vue-cookie": "^1.1.4",
     "vue-meta": "^1.5.0",

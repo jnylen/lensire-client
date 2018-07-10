@@ -37,7 +37,7 @@ export default {
     fetchProducts () {
       products.getAll({wear: 'daily'})
         .then(response => {
-          this.products = response.data.sort()
+          this.products = response.data
           console.log(response.data)
         })
         .catch(error => {

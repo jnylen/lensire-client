@@ -10,6 +10,7 @@ client.define('product', {
   image: '',
   wear: '',
   type: '',
+  popular: false,
   company: {
     jsonApi: 'hasOne',
     type: 'company'
