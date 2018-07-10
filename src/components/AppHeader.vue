@@ -70,7 +70,7 @@ nav {
   border-bottom: 1px solid #ddd;
 }
 
-.navbar-item.active {
+.navbar-item.is-active {
   font-weight: bold;
 }
 </style>
