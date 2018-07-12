@@ -3,11 +3,7 @@ import Router from 'vue-router'
 import Home from '@/components/Home'
 import Product from '@/components/Product'
 import Impressum from '@/components/Impressum'
-
-import Yearly from '@/components/Products/Yearly'
-import Monthly from '@/components/Products/Monthly'
-import Daily from '@/components/Products/Daily'
-import Weekly from '@/components/Products/Weekly'
+import Products from '@/components/Products'
 
 Vue.use(Router)
 
@@ -32,24 +28,9 @@ export default new Router({
       component: Impressum
     },
     {
-      path: '/products/daily',
-      name: 'Daily',
-      component: Daily
-    },
-    {
-      path: '/products/yearly',
-      name: 'Yearly',
-      component: Yearly
-    },
-    {
-      path: '/products/monthly',
-      name: 'Monthly',
-      component: Monthly
-    },
-    {
-      path: '/products/weekly',
-      name: 'Weekly',
-      component: Weekly
+      path: '/products/:type',
+      name: 'Products',
+      component: Products
     }
 
   ]

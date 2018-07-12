@@ -3,7 +3,7 @@ import { mapGetters } from 'vuex'
 import ProductItem from './ProductItem'
 
 export default {
-  name: 'Yearly',
+  name: 'Products',
   components: {
     ProductItem
   },
@@ -12,8 +12,10 @@ export default {
       loading: true
     }
   },
-  metaInfo: {
-    title: 'Yearlies'
+  metaInfo () {
+    return {
+      title: this.title
+    }
   },
   computed: {
     ...mapGetters([
@@ -30,9 +32,16 @@ export default {
         return 0
       }
 
-      const newprods = this.getProductsByWear('yearly')
+      const newprods = this.getProductsByWear(this.$route.params.type)
 
       return newprods.sort(compare)
+    },
+    title () {
+      if (this.$route) {
+        return this.$i18n.translate('header.menu.' + this.$route.params.type)
+      } else {
+        return 'Products'
+      }
     }
   }
 }
@@ -41,7 +50,7 @@ export default {
 <template>
 <div class="container">
   <div class="notification is-primary has-text-centered">
-    Here is a list of yearly contact lenses we currently provide pricing for.
+    Here is a list of {{ this.$route.params.type }} contact lenses we currently provide pricing for.
   </div>
   <div class="popular items">
     <div class="columns padding-top" v-if="!sortedProducts.length">

@@ -1,6 +1,6 @@
 <script>
 import { mapGetters } from 'vuex'
-import ProductItem from './Products/ProductItem'
+import ProductItem from './ProductItem'
 import typeahead from './Typeahead'
 
 export default {
@@ -15,7 +15,10 @@ export default {
     }
   },
   metaInfo: {
-    title: 'Home'
+    title: 'Price compare contact lenses - The world\'s cheapest contact lenses on the web!',
+    meta: [
+      {description: 'Compare prices on contact lenses all over the world. Free shipping. Buy your contact lenses up to 50% cheaper online!'}
+    ]
   },
   computed: {
     ...mapGetters([
