@@ -14,7 +14,7 @@ const sv = {
   'footer.by': '<strong>Lensire</strong> av <strong>Meiku</strong>',
   'footer.affiliate': 'Länkar markerade som "Affiliate" är affiliate länkar och ger oss pengar tillbaka ifall att du köper därifrån.',
   'footer.general': 'Allmänt',
-  'footer.general.impressum': 'Impressum/Disclaimers',
+  'footer.general.impressum': 'Impressum',
   'footer.general.about': 'Om oss',
   'footer.general.contact': 'Kontakta oss',
   'footer.legal': 'Legal',

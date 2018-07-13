@@ -14,7 +14,7 @@ const en = {
   'footer.by': '<strong>Lensire</strong> by <strong>Meiku</strong>',
   'footer.affiliate': 'Links marked as "Affiliate" are affiliate links and gives us money in return of you buying from there.',
   'footer.general': 'General',
-  'footer.general.impressum': 'Impressum/Disclaimers',
+  'footer.general.impressum': 'Impressum',
   'footer.general.about': 'About us',
   'footer.general.contact': 'Contact us',
   'footer.legal': 'Legal',
