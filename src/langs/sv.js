@@ -7,6 +7,8 @@ const sv = {
   'header.menu.yearly': 'Årslinser',
   'homepage.info': 'Lensire är en webbplats för jämförelse av kontaktlinser som sammanställer priser över hela världen och försöker ge dig den bästa prissättningen för alla återförsäljare som kan leverera till dig.',
   'homepage.chosen': 'Ditt valda land är <strong>{country}</strong> och valutan <strong>{currency}</strong>',
+  'homepage.search_header': 'Hitta de billigaste priserna för dina kontaktlinser',
+  'homepage.search_placeholder': 'Sök på namn...',
   'homepage.popular_header': 'Populära kontaktlinser',
   'products.info': 'Här är en lista för {type} kontaktlinser som vi just nu har priser för.',
   'footer.by': '<strong>Lensire</strong> av <strong>Meiku</strong>',
@@ -31,7 +33,8 @@ const sv = {
   'pricing.not_in_stock': 'Ej i lager',
   'pricing.per_lens': '{text} per lins',
   'pricing.affiliate': 'Affiliate',
-  'product.empty': 'Vi har just nu inga priser för denna lins. Kom tillbaka senare!',
+  'pricing.buy_buyyon': 'Köp',
+  'pricing.empty': 'Vi har just nu inga priser för denna kontaktlins.',
   'product.type.daily': 'Endagslins',
   'product.type.monthly': 'Månadslins',
   'product.type.weekly': 'Veckolins',
@@ -46,7 +49,7 @@ const sv = {
   'product.type.rigid_gas': 'Gas',
   'product.type.permeable': 'Permeable',
   'product.type.hard': 'Hård',
-  'no_data': 'Just nu så finns det inga produkter i databasen.'
+  'no_data': 'Just nu så har vi inga kontaktlinser för denna typ i databasen.'
 }
 
 export default sv

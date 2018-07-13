@@ -84,7 +84,7 @@ export default {
     </div>
     <div class="pt-2">
       <h1 class="text-grey-darker font-semibold text-lg">{{product.name}}</h1>
-      <h5 class="text-grey-darker text-xs font-medium pt-4">Tillverkad av {{product.company.name}}</h5>
+      <h5 class="text-grey-darker text-xs font-medium pt-4">{{ $t('product.manufacturer', {company: product.company.name})}}</h5>
       <div class="pt-8 pb-4">
         <span class="bg-pink-light px-4 py-2 text-white rounded-full text-sm font-semibold">{{ $t('product.type.' + product.wear) }}</span>
         <span class="bg-grey-darker px-4 py-2 text-white rounded-full text-sm font-semibold" v-if="product.type">{{ $t('product.type.' + product.type) }}</span>
@@ -93,7 +93,7 @@ export default {
   </div>
 
   <div class="bg-old-gray border-b border-t border-solid border-grey-light p-8">
-    <div id="sort">
+    <div id="sort" v-if="sortedPricings.length">
       <div class="relative mx-auto w-1/6">
         <select v-model="filterParam" class="bg-old-gray border-0 p-4 w-full text-grey-darker font-medium text-lg font-inherit">
             <option value="per_lens">{{ $t('product.sort_by.per_lens') }}</option>
@@ -107,11 +107,21 @@ export default {
         </div>
       </div>
     </div>
-    <div class="flex flex-no-wrap justify-center pt-5 pb-10">
-      <div class="bg-white w-3/4 shadow rounded-lg">
+    <div class="flex flex-wrap justify-center pt-5 pb-10" v-if="sortedPricings.length">
+      <div class="bg-white w-3/4 shadow-md rounded-lg">
         <ul class="list-reset">
           <pricing-item v-for="price in sortedPricings" v-bind:key="price.id" v-bind:data="price" />
         </ul>
+      </div>
+    </div>
+    <div v-if="!sortedPricings.length">
+      <div class="text-grey text-center text-lg font-medium p-40">
+        <div class="pb-12">
+          <svg class="h-32 w-32 text-grey-light" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M64 1.99458L62.0085 0L32 30.0051L1.99353 0L0 1.99458L30.0065 31.9994L0 62.0046L1.99353 64L32 33.9909L62.0085 64L64 62.0046L33.9935 31.9994L64 1.99458Z" fill="#B8C2CC"/>
+          </svg>
+        </div>
+        {{ $t('pricing.empty') }}
       </div>
     </div>
   </div>

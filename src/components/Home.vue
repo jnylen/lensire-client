@@ -56,11 +56,11 @@ export default {
 <div class="mt-16 flex content-between flex-wrap">
   <div class="w-full flex-grow">
     <div class="text-center">
-      <h1 class="text-lg text-grey-darker font-semibold">Hitta dina kontaktlinser</h1>
+      <h1 class="text-lg text-grey-darker font-semibold">{{ $t('homepage.search_header') }}</h1>
     </div>
     <div class="pt-8">
       <div class="relative mx-auto w-1/4">
-        <input type="search" class="bg-grey-lighter shadow-md rounded-lg border-0 p-4 w-full" placeholder="Search by name...">
+        <input type="search" class="bg-grey-lighter shadow-md rounded-lg border-0 p-4 w-full" :placeholder="$t('homepage.search_placeholder')">
         <div class="absolute pin-r pin-t mt-3 mr-3 text-grey-lighter">
           <svg class="h-6 text-dark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M0.625 0C0.28 0 0 0.28 0 0.625C0 0.97 0.28 1.25 0.625 1.25C0.97 1.25 1.25 0.97 1.25 0.625C1.25 0.28 0.97 0 0.625 0Z" transform="translate(18.75 11.875)" fill="#F66D9B"/>
@@ -74,7 +74,7 @@ export default {
   </div>
   <div class="w-full mt-32">
     <div class="text-center">
-      <h1 class="text-lg text-grey-darker font-semibold">Populära kontaktlinser</h1>
+      <h1 class="text-lg text-grey-darker font-semibold">{{ $t('homepage.popular_header') }}</h1>
     </div>
     <div class="flex flex-wrap justify-center mt-8">
       <ProductItem v-for="item in getPopularProducts.slice(2)" v-bind:key="item.id" v-bind:data="item" />

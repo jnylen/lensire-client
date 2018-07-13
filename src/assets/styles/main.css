@@ -51,7 +51,7 @@ a:hover {
 
 .product-image img {
     max-width:220px;
-    height:100px;
+    height:auto;
     max-height:100px;
     width:auto;
 }

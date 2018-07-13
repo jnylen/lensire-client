@@ -10,7 +10,7 @@
 
     <!-- name + pckage amount -->
     <div class="w-1/3 pl-4 pt-2">
-      <h1 class="text-grey-darker font-semibold text-sm">{{data.product.name}}</h1>
+      <h1 class="text-grey-darker font-semibold text-sm truncate pr-10">{{data.product.name}}</h1>
       <h5 class="text-grey-darker font-normal text-sm">{{ $t('pricing.pack', {amount: data.package_amount}) }}</h5>
     </div>
 
@@ -63,116 +63,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.box-item {
-  margin-bottom:10px;
 
-  .affiliate-ribbon {
-    top:0px;
-    right:0px;
-    border-top-right-radius: 5px;
-  }
-
-  .data {
-    display: flex;
-    justify-content: space-between;
-
-    .reseller {
-      border-right:1px solid #ccc;
-      flex: none;
-      width:130px;
-      padding-right:10px;
-
-      .special-ribbon {
-        top:-20px;
-        left:-20px;
-        border-top-left-radius: 5px;
-      }
-
-      .logo {
-        height:100%;
-
-        img {
-          max-width:120px;
-          position:absolute;
-          top:0;
-          bottom:0;
-          margin:auto;
-        }
-      }
-    }
-
-    .item {
-      flex: none;
-      display: flex;
-      height:50px;
-      width:50%;
-
-      .productimage {
-        padding-left:10px;
-        flex: none;
-        height:100%;
-        width:80px;
-        text-align:center;
-
-        .image {
-          display:inline-block;
-          vertical-align: middle;
-          height:100%;
-
-          img {
-            max-height:50px;
-            max-width:80px;
-            vertical-align: middle;
-          }
-        }
-      }
-
-      .info {
-        padding-left:20px;
-        flex: none;
-
-        h5 {
-          font-weight:bold;
-        }
-      }
-    }
-
-    .pricing {
-      width:40%;
-
-      div.other {
-        background: #000;
-        width:20%;
-        display:inline-block;
-
-        span {
-          float:right;
-        }
-      }
-
-      .container {
-        width:100%;
-        float:right;
-        height:100%;
-        padding-top:10px;
-        margin-bottom:-10px;
-
-        a.total {
-          float:right;
-          font-size:24px;
-          font-weight:bold;
-          color:#000;
-
-          &:hover {
-            text-decoration: underline;
-          }
-        }
-
-        span.perlens {
-          line-height:35px;
-        }
-      }
-    }
-  }
-}
 </style>
