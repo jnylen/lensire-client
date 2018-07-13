@@ -77,7 +77,7 @@ export default {
       <h1 class="text-lg text-grey-darker font-semibold">{{ $t('homepage.popular_header') }}</h1>
     </div>
     <div class="flex flex-wrap justify-center mt-8">
-      <ProductItem v-for="item in getPopularProducts.slice(2)" v-bind:key="item.id" v-bind:data="item" />
+      <ProductItem v-for="item in getPopularProducts" v-bind:key="item.id" v-bind:data="item" />
     </div>
   </div>
 </div>
