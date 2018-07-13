@@ -29,7 +29,9 @@ export default {
         <strong>Copyright</strong><br/>
         The images, names and similar information about the contact lenses are owned by the manufacturer. We do not claim ownership over those items.<br/><br/>
         <strong>Affiliate</strong><br/>
-        Links that goes from our website to webshops can be affiliate links, which means we get a percentage of the money you spend there. Those links are marked as "Affiliate". Sometimes we might have missed to have marked the link as affiliate. Please contact us if you notice that.
+        Links that goes from our website to webshops can be affiliate links, which means we get a percentage of the money you spend there. Those links are marked as "Affiliate". Sometimes we might have missed to have marked the link as affiliate. Please contact us if you notice that.<br/><br/>
+        <strong>Icons</strong><br/>
+        <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a>, <a href="https://www.flaticon.com/authors/mynamepong" title="mynamepong">mynamepong</a> and <a href="https://www.flaticon.com/authors/gregor-cresnar" title="Gregor Cresnar">Gregor Cresnar</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
     </p>
 </div>
 </template>

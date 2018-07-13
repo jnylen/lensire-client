@@ -48,27 +48,16 @@ export default {
 </script>
 
 <template>
-<div class="container">
-  <div class="notification is-primary has-text-centered">
-    Here is a list of {{ this.$route.params.type }} contact lenses we currently provide pricing for.
+<div class="flex flex-wrap flex-col">
+  <div class="text-center pt-12">
+    <h1 class="text-lg text-grey-darker font-semibold">{{ $t('header.menu.' + this.$route.params.type ) }}</h1>
   </div>
-  <div class="popular items">
-    <div class="columns padding-top" v-if="!sortedProducts.length">
-      <p>{{ $t('no_data') }}</p>
-    </div>
-    <div class="columns padding-top is-multiline" v-if="sortedProducts.length">
-      <ProductItem v-for="item in sortedProducts" v-bind:key="item.id" v-bind:data="item" />
-    </div>
+  <div class="p-8 flex flex-wrap justify-center">
+    <ProductItem v-for="item in sortedProducts" v-bind:key="item.id" v-bind:data="item" />
   </div>
 </div>
 </template>
 
 <style scoped>
- .container {
-   padding-top:20px;
- }
 
- .padding-top {
-   padding-top:20px;
- }
 </style>

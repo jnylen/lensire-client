@@ -1,4 +1,6 @@
 <script>
+import '@/assets/styles/main.css'
+
 import AppHeader from './components/AppHeader'
 import AppFooter from './components/AppFooter'
 
@@ -21,9 +23,9 @@ export default {
 </script>
 
 <template>
-  <div id="whole-app">
+  <div class="min-h-screen flex flex-col" id="whole-app">
     <app-header />
-    <div id="app">
+    <div class="flex-grow" id="app">
       <router-view />
     </div>
     <app-footer />
@@ -31,50 +33,5 @@ export default {
 </template>
 
 <style lang="scss">
-// Import Bulma's core
-@import "~bulma/sass/utilities/_all";
 
-// Set your colors
-$primary: #fff;
-$primary-invert: findColorInvert($primary);
-$twitter: #4099FF;
-$twitter-invert: findColorInvert($twitter);
-
-// Setup $colors to use as bulma classes (e.g. 'is-twitter')
-$colors: (
-    "white": ($white, $black),
-    "black": ($black, $white),
-    "light": ($light, $light-invert),
-    "dark": ($dark, $dark-invert),
-    "primary": ($primary, $primary-invert),
-    "info": ($info, $info-invert),
-    "success": ($success, $success-invert),
-    "warning": ($warning, $warning-invert),
-    "danger": ($danger, $danger-invert),
-    "twitter": ($twitter, $twitter-invert)
-);
-
-// Links
-$link: $primary;
-$link-invert: $primary-invert;
-$link-focus-border: $primary;
-
-// Import Bulma and Buefy styles
-@import "~bulma";
-@import "~buefy/src/scss/buefy";
-@import "~bulma-ribbon/src/sass/index";
-
-html,body {
-  background: #eeeeee;
-}
-
-#whole-app {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-#app {
-  flex: 1;
-}
 </style>
