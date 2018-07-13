@@ -22,8 +22,8 @@
     <!-- total amount -->
     <div class="w-1/3 pt-2">
       <div class="float-right mt-1">
-        <a class="bg-green-light py-2 px-8 text-white rounded-full text-sm" v-if="data.in_stock" :href="data.link" rel="nofollow" target="_blank">Köp</a>
-        <a class="bg-grey py-2 px-8 text-white rounded-full text-sm" v-if="!data.in_stock" :href="data.link" rel="nofollow" target="_blank">Köp</a>
+        <a class="bg-green-light py-2 px-8 text-white rounded-full text-sm hover:no-underline hover:bg-green-lighter" v-if="data.in_stock" :href="data.link" rel="nofollow" target="_blank">Köp</a>
+        <a class="bg-grey py-2 px-8 text-white rounded-full text-sm hover:no-underline hover:bg-grey-light" v-if="!data.in_stock" :href="data.link" rel="nofollow" target="_blank">Köp</a>
       </div>
       <div class="ml-10">
         <div class="float-right mr-4" v-if="data.store.based_in_country !== getCountry">
@@ -49,7 +49,7 @@ export default {
   computed: {
     ...mapGetters([
       'getCountry'
-    ]),
+    ])
   },
   methods: {
     rounded: function (value, decimals) {
