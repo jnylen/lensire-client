@@ -16,7 +16,12 @@ export default {
   },
   methods: {
     countryFlag (value) {
-      return require('@/assets/flags/' + value.toLowerCase() + '.svg')
+      if (value) {
+        return require('@/assets/flags/' + value.toLowerCase() + '.svg')
+      } else {
+        return undefined
+      }
+      
     }
   }
 }
