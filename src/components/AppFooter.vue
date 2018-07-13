@@ -5,77 +5,22 @@ export default {
 </script>
 
 <template>
-<footer class="footer">
-  <div class="container">
-    <div class="content">
-      <p class="has-text-centered infoline" v-html="$t('footer.by')"></p>
-
-      <p class="has-text-centered">
-          {{ $t('footer.affiliate') }}
-      </p>
-
-      <div class="columns is-multiline is-centered links-column">
-        <div class="column is-narrow is-2">
-            <div class="links">
-                <p class="menu-label">
-                    {{ $t('footer.general') }}
-                </p>
-                <ul class="links-list">
-                    <li><router-link to="/impressum">{{ $t('footer.general.impressum') }}</router-link></li>
-                    <li><a href="https://meiku.se">{{ $t('footer.general.about') }}</a></li>
-                    <li><a href="mailto:contact@meiku.se">{{ $t('footer.general.contact') }}</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="column is-narrow">
-            <div class="links">
-                <p class="menu-label">
-                    {{ $t('footer.legal') }}
-                </p>
-                <ul class="links-list">
-                    <li><a>{{ $t('footer.legal.terms') }}</a></li>
-                    <li><a>{{ $t('footer.legal.privacy_policy') }}</a></li>
-                    <li><a>{{ $t('footer.legal.copyright') }}</a></li>
-                </ul>
-            </div>
-        </div>
-      </div>
+<div class="p-6">
+  <div class="flex">
+    <div class="justify-start text-left w-1/3 text-grey-dark text-sm font-normal">
+      <a class="font-semibold text-grey-dark">Lensire</a> by <a class="font-semibold text-grey-dark">Meiku</a>
+    </div>
+    <div class="justify-between w-1/3 text-center">
+      <nav>
+        <router-link to="/impressum" class="mr-24 text-grey-dark text-sm font-semibold">{{ $t('footer.general.impressum') }}</router-link>
+        <a href="https://meiku.se" class="mr-24 text-grey-dark text-sm font-semibold" tager="_blank">{{ $t('footer.general.about') }}</a>
+        <a class="text-grey-dark text-sm font-semibold" href="mailto:contact@meiku.se">{{ $t('footer.general.contact') }}</a>
+      </nav>
     </div>
   </div>
-</footer>
+</div>
 </template>
 
 <style lang="scss" scoped>
-.footer {
-    padding:20px;
-    margin-top:40px;
-    border-top:1px solid #ddd;
-}
 
-.infoline {
-    a {
-        color: hsl(0, 0%, 21%);
-
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-}
-
-.links-column {
-    padding-top:20px;
-}
-
-.links ul {
-    list-style: none;
-    margin-left: 0; padding-left: 0;
-
-    li {
-        list-style-type: none;
-
-        a {
-        color: hsl(0, 0%, 21%);
-        }
-    }
-}
 </style>

@@ -7,6 +7,8 @@ const en = {
   'header.menu.yearly': 'Yearly',
   'homepage.info': 'Lensire is a contact lens pricing comparison website that compiles prices all over the world and tries to give you the best pricing for any reseller that can ship to you.',
   'homepage.chosen': 'Your chosen country is <strong>{country}</strong> and currency is <strong>{currency}</strong>',
+  'homepage.search_header': 'Find the cheapest prices for your contact lenses',
+  'homepage.search_placeholder': 'Search by name...',
   'homepage.popular_header': 'Popular contact lenses',
   'products.info': 'Here is a list of {type} we currently provide pricing for.',
   'footer.by': '<strong>Lensire</strong> by <strong>Meiku</strong>',
@@ -24,15 +26,15 @@ const en = {
   'product.sort_by.per_lens': 'Sort price by per lens',
   'product.sort_by.per_box': 'Sort price by per box',
   'product.shipping_prices_included': 'The price per lens and total price has shipping fee included.',
-  'pricing.pack': 'Pack of {amount}',
+  'pricing.pack': 'Pack of {amount} lenses',
   'pricing.shipping.free': 'Free shipping',
-  'pricing.shipping.cost': '{amount} {currency} for shipping',
+  'pricing.shipping.cost': '{text} shipping incl.',
   'pricing.in_stock': 'In stock',
   'pricing.not_in_stock': 'Not in stock',
-  'pricing.per_lens': '{amount} {currency} per lens',
+  'pricing.per_lens': '{text} per lens',
   'pricing.affiliate': 'Affiliate',
-  'pricing.per_box': '{amount} {currency} &raquo;',
-  'pricing.empty': 'Currently we have no prices for this contact lens. Sorry about that.',
+  'pricing.buy_buyyon': 'Buy',
+  'pricing.empty': 'We don\'t have any pricing information for this contact lens yet',
   'product.type.daily': 'Daily contacts',
   'product.type.monthly': 'Monthly contacts',
   'product.type.weekly': 'Weekly contacts',
@@ -47,7 +49,7 @@ const en = {
   'product.type.rigid_gas': 'Rigid gas',
   'product.type.permeable': 'Permeable',
   'product.type.hard': 'Hard',
-  'no_data': 'Currently no products in the database'
+  'no_data': 'We don\'t have any contact lenses in the database for this type.'
 }
 
 export default en
