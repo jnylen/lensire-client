@@ -90,10 +90,10 @@ export default {
       if (this.matches && this.preselected !== 0) {
         this.preselected--
         let el = document.getElementsByClassName('vbta-suggestion')[this.preselected]
-        el.style['background-color'] = '#00d1b2'
+        el.style['background-color'] = '#f66d9b'
 
         let prev = document.getElementsByClassName('vbta-suggestion')[this.preselected + 1]
-        prev.style['background-color'] = '#ffffff'
+        prev.style['background-color'] = '#f1f5f8'
       }
     },
     handleKeyDown () {
@@ -104,11 +104,11 @@ export default {
           this.firstTouch = false
         }
         let el = document.getElementsByClassName('vbta-suggestion')[this.preselected]
-        el.style['background-color'] = '#00d1b2'
+        el.style['background-color'] = '#f66d9b'
 
         if (this.preselected !== 0) {
           let prev = document.getElementsByClassName('vbta-suggestion')[this.preselected - 1]
-          prev.style['background-color'] = '#ffffff'
+          prev.style['background-color'] = '#f1f5f8'
         }
       }
     },
