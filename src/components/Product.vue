@@ -29,9 +29,7 @@ export default {
     sortedPricings () {
       const pric = this.pricings
 
-      return pric.sort((a, b) => {
-        return a.pricing_converted.shipping_prices[this.filterParam] > b.pricing_converted.shipping_prices[this.filterParam]
-      })
+      return pric.sort((a, b) => { return a.pricing_converted.shipping_prices[this.filterParam] - b.pricing_converted.shipping_prices[this.filterParam];});
     },
     product () {
       return this.getProductById(this.$route.params.id)
