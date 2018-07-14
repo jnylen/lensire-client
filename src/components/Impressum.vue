@@ -51,6 +51,12 @@ export default {
 
     <ul>
         <li>
+            <p class="leading-normal">Adtraction</p>
+        </li>
+        <li>
+            <p class="leading-normal">Affilinet (Afilli.net)</p>
+        </li>
+        <li>
             <p class="leading-normal">Commission Junction</p>
         </li>
         <li>
