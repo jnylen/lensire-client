@@ -1,7 +1,7 @@
 <template>
   <div class="relative mx-auto w-1/4">
     <div class="">
-      <input v-model="query" type="search" class="bg-grey-lighter shadow-md rounded-lg border-0 p-4 w-full" :placeholder="$t('homepage.search_placeholder')" @keyup.delete="handleDelete($event)" @keydown.down.prevent="handleKeyDown($event)" @keydown.up.prevent="handleKeyUp" @keyup.enter.prevent.submit="emitSelect(matches[preselected])">
+      <input v-model="query" type="search" class="bg-grey-lighter shadow-md rounded-lg border-0 focus:outline-color-pink p-4 w-full" :placeholder="$t('homepage.search_placeholder')" @keyup.delete="handleDelete($event)" @keydown.down.prevent="handleKeyDown($event)" @keydown.up.prevent="handleKeyUp" @keyup.enter.prevent.submit="emitSelect(matches[preselected])">
         <div class="absolute pin-r pin-t mt-3 mr-3 text-grey-lighter">
           <svg class="h-6 text-dark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M0.625 0C0.28 0 0 0.28 0 0.625C0 0.97 0.28 1.25 0.625 1.25C0.97 1.25 1.25 0.97 1.25 0.625C1.25 0.28 0.97 0 0.625 0Z" transform="translate(18.75 11.875)" fill="#F66D9B"/>

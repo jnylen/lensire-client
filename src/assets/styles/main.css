@@ -40,18 +40,13 @@ a:hover {
     @apply .text-pink;
 }
 
-.logo.is-active {
-    text-decoration: none;
-    @apply .text-pink;
-}
 
 .product-image {
-
 }
 
 .product-image img {
     max-width:220px;
-    height:auto;
+    height:100px;
     max-height:100px;
     width:auto;
 }
@@ -68,6 +63,7 @@ a:hover {
     height:100%;
     width:100%;
     text-align:center;
+    padding: 0 10px;
 }
 
 .pricingitem .storelogo img {

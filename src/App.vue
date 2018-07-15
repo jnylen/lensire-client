@@ -25,7 +25,7 @@ export default {
 <template>
   <div class="min-h-screen flex flex-col" id="whole-app">
     <app-header />
-    <div class="flex-grow" id="app">
+    <div class="flex-grow flex-1 flex flex-col" id="app">
       <router-view />
     </div>
     <app-footer />

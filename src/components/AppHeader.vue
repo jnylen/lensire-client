@@ -21,7 +21,6 @@ export default {
       } else {
         return undefined
       }
-      
     }
   }
 }
