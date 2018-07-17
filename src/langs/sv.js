@@ -33,7 +33,7 @@ const sv = {
   'pricing.not_in_stock': 'Ej i lager',
   'pricing.per_lens': '{text} per lins',
   'pricing.affiliate': 'Affiliate',
-  'pricing.buy_buyyon': 'Köp',
+  'pricing.buy_button': 'Köp',
   'pricing.empty': 'Vi har just nu inga priser för denna kontaktlins.',
   'product.type.daily': 'Endagslins',
   'product.type.monthly': 'Månadslins',

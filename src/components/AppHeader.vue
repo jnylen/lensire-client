@@ -29,7 +29,7 @@ export default {
 <template>
 <div class="bg-old-gray border-b border-solid border-grey-light">
   <div class="container mx-auto flex flex-col lg:flex-row items-center py-4">
-    <nav class="w-full lg:w-2/5 pl-6">
+    <nav class="w-full lg:w-2/5 text-center pl-6">
       <router-link to="/products/daily" class="navbar-item">{{ $t('header.menu.daily') }}</router-link>
       <router-link to="/products/monthly" class="navbar-item">{{ $t('header.menu.monthly') }}</router-link>
       <router-link to="/products/weekly" class="navbar-item">{{ $t('header.menu.weekly') }}</router-link>
@@ -58,8 +58,8 @@ export default {
         </svg>
       </router-link>
     </div>
-    <div class="w-full lg:w-2/5 flex lg:justify-end h-full">
-      <nav class="flex items-center h-8 pt-6">
+    <div class="w-full  pl-6 sm:pl-0 lg:w-2/5 flex lg:justify-end h-full">
+      <nav class="flex mx-auto lg:mx-0 items-center h-8 pt-6">
           <a href="#" class="right-menu-item mr-10">
             <img class="h-8 w-8" :src="countryFlag(getCountry)" />
           </a>

@@ -33,7 +33,7 @@ const en = {
   'pricing.not_in_stock': 'Not in stock',
   'pricing.per_lens': '{text} per lens',
   'pricing.affiliate': 'Affiliate',
-  'pricing.buy_buyyon': 'Buy',
+  'pricing.buy_button': 'Buy',
   'pricing.empty': 'We don\'t have any pricing information for this contact lens yet',
   'product.type.daily': 'Daily contacts',
   'product.type.monthly': 'Monthly contacts',

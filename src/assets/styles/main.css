@@ -55,8 +55,8 @@ a:hover {
     @apply .border-b .border-solid .border-grey-light
 }
 
-.pricingitem:last-child {
-    @apply .border-0
+.pricingitem:first-child {
+    @apply .border-t
 }
 
 .pricingitem .storelogo div {

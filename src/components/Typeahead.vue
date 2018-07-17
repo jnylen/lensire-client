@@ -1,5 +1,5 @@
 <template>
-  <div class="relative mx-auto w-1/4">
+  <div class="relative lg:w-1/4 mx-5 lg:mx-auto">
     <div class="">
       <input v-model="query" type="search" class="bg-grey-lighter shadow-md rounded-lg border-0 focus:outline-color-pink p-4 w-full" :placeholder="$t('homepage.search_placeholder')" @keyup.delete="handleDelete($event)" @keydown.down.prevent="handleKeyDown($event)" @keydown.up.prevent="handleKeyUp" @keyup.enter.prevent.submit="emitSelect(matches[preselected])">
         <div class="absolute pin-r pin-t mt-3 mr-3 text-grey-lighter">
@@ -11,8 +11,8 @@
         </svg>
       </div>
     </div>
-    <div :class="['vbta-menu', { visible: matches.length && !selected }]">
-        <ul class="list-reset">
+    <div :class="['vbta-menu truncate', { visible: matches.length && !selected }]">
+        <ul class="list-reset ">
             <li v-for="match in matches" v-bind:key="match.id" class="vbta-suggestion" @click="emitSelect(match)">
             <span v-html="match.name"></span>
         </li>

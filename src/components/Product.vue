@@ -90,10 +90,10 @@ export default {
     </div>
   </div>
 
-  <div class="bg-old-gray border-b border-t border-solid border-grey-light p-8 flex-1 flex">
+  <div class="bg-old-gray border-b border-t border-solid border-grey-light flex-1 flex">
     <div class="flex-1 flex flex-col" v-if="sortedPricings.length">
-      <div id="sort">
-        <div class="relative mx-auto w-1/6">
+      <div id="sort" class=" mx-auto md:w-1/3 lg:w-1/6 pt-6">
+        <div class="relative ">
           <select v-model="filterParam" class="bg-old-gray border-0 p-4 w-full text-grey-darker font-medium text-lg font-inherit">
               <option value="per_lens">{{ $t('product.sort_by.per_lens') }}</option>
               <option value="per_box">{{ $t('product.sort_by.per_box') }}</option>
@@ -106,8 +106,8 @@ export default {
           </div>
         </div>
       </div>
-      <div class="flex flex-wrap justify-center pt-5 pb-10" v-if="sortedPricings.length">
-        <div class="bg-white w-3/4 shadow-md rounded-lg">
+      <div class="flex flex-wrap lg:justify-center pt-5 pb-10" v-if="sortedPricings.length">
+        <div class="bg-white lg:w-3/4 lg:shadow-md lg:rounded-lg w-full">
           <ul class="list-reset">
             <pricing-item v-for="price in sortedPricings" v-bind:key="price.id" v-bind:data="price" />
           </ul>

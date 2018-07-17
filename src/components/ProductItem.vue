@@ -1,5 +1,5 @@
 <template>
-<div class="pb-4 shadow-md bg-white w-1/6 m-3 flex flex-col rounded overflow-hidden">
+<div class="pb-4 shadow-md bg-white w-full md:w-1/3 lg:w-1/4 xl:w-1/6 m-3 flex flex-col rounded overflow-hidden">
     <div class="product-image flex flex-col items-center  p-4 bg-grey-lighter">
         <router-link :to="{ name: 'Product', params: { id: data.id }}" class="text-center hover:no-underline">
             <img class="mx-auto" src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image" v-if="!data.image" />
