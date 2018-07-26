@@ -24,6 +24,7 @@ client.define('pricing', {
   created: '',
   in_stock: null,
   image: null,
+  special_type: null,
   pricing_converted: {
     shipping_prices: {
       per_lens: '',

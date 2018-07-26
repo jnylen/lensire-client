@@ -12,7 +12,7 @@
     <div class="w-2/5 sm:w-2/5 pl-4 pt-2 pr-4 sm:pr-0">
       <h1 class="hidden w-full  lg:block text-grey-darker font-semibold text-sm truncate">{{data.product.name}}</h1>
       <h1 class="lg:hidden text-grey-darker font-semibold text-sm truncate">{{data.store.name}}</h1>
-      <h5 class="text-grey-darker font-normal text-sm">{{ $t('pricing.pack', {amount: data.package_amount}) }}</h5>
+      <h5 class="text-grey-darker font-normal text-sm">{{ $t('pricing.pack', {amount: data.package_amount}) }}<span class="font-medium" v-if="data.special_type">, {{data.special_type}}</span></h5>
     </div>
 
     <!-- price per lens -->
