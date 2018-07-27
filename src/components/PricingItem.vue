@@ -3,7 +3,7 @@
   <div class="flex justify-between">
     <!-- logo -->
     <div class="storelogo w-1/6 pt-2 hidden lg:block">
-      <div>
+      <div class="flex items-center justify-center">
         <img :src="data.store.logo" />
       </div>
     </div>
