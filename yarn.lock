@@ -6547,6 +6547,10 @@ range-parser@^1.0.3, range-parser@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.0.tgz#f49be6b487894ddc40dcc94a322f611092e00d5e"
 
+raven-js@^3.18.1:
+  version "3.26.4"
+  resolved "https://registry.yarnpkg.com/raven-js/-/raven-js-3.26.4.tgz#32aae3a63a9314467a453c94c89a364ea43707be"
+
 raw-body@2:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/raw-body/-/raw-body-2.3.3.tgz#1b324ece6b5706e153855bc1148c65bb7f6ea0c3"
@@ -8142,6 +8146,13 @@ vue-template-compiler@^2.5.2:
 vue-template-es2015-compiler@^1.5.3, vue-template-es2015-compiler@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.6.0.tgz#dc42697133302ce3017524356a6c61b7b69b4a18"
+
+vue2-sentry@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/vue2-sentry/-/vue2-sentry-1.2.1.tgz#851a4f82787baac57bb7d7c480d21d0c2d52483c"
+  dependencies:
+    raven-js "^3.18.1"
+    vue "^2.5.2"
 
 vue@^2.3.3, vue@^2.5.2:
   version "2.5.16"

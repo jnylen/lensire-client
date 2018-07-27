@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import Meta from 'vue-meta'
+import VueSentry from 'vue2-sentry'
 
 import App from './App'
 import router from './router'
@@ -14,6 +15,13 @@ import en from './langs/en'
 import sv from './langs/sv'
 
 Vue.config.productionTip = false
+
+Vue.use(VueSentry, {
+  key: 'df995bba90e44c60ba64f71840ba3d47',
+  project: '5',
+  server: 'sentry.meiku.se:444',
+  config: {} // Optional: custom config
+})
 
 Vue.use(Meta)
 Vue.use(vuexI18n.plugin, store)
