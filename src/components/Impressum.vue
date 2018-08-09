@@ -62,6 +62,9 @@ export default {
         <li>
             <p class="leading-normal">Double.net</p>
         </li>
+        <li>
+            <p class="leading-normal">Tradedoubler.net</p>
+        </li>
     </ul>
 
 
