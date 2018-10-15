@@ -55,10 +55,6 @@ a:hover {
     @apply .border-b .border-solid .border-grey-light
 }
 
-.pricingitem:first-child {
-    @apply .border-t
-}
-
 .pricingitem .storelogo div {
     height:100%;
     width:100%;

@@ -107,7 +107,7 @@ export default {
         </div>
       </div>
       <div class="flex flex-wrap lg:justify-center pt-5 pb-10" v-if="sortedPricings.length">
-        <div class="bg-white lg:w-3/4 lg:shadow-md lg:rounded-lg w-full">
+        <div class="bg-white lg:w-3/4 lg:shadow-md lg:rounded-lg w-full border-t">
           <ul class="list-reset">
             <pricing-item v-for="price in sortedPricings" v-bind:key="price.id" v-bind:data="price" />
           </ul>
