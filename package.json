@@ -14,7 +14,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "currency-formatter": "^1.4.3",
     "devour-client": "^2.1.0",
     "flag-icon-css": "^3.0.0",
