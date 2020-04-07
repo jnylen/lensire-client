@@ -2178,12 +2178,12 @@ cuint@^0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/cuint/-/cuint-0.2.2.tgz#408086d409550c2631155619e9fa7bcadc3b991b"
 
-currency-formatter@^1.4.3:
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/currency-formatter/-/currency-formatter-1.4.3.tgz#5394125435b08b2c08f48b0e482eb5a949d99bc6"
+currency-formatter@^1.5.5:
+  version "1.5.5"
+  resolved "https://registry.yarnpkg.com/currency-formatter/-/currency-formatter-1.5.5.tgz#907790bb0b7f129c4a64d2924e0d7fa36db0cf52"
   dependencies:
     accounting "^0.4.1"
-    locale-currency "0.0.1"
+    locale-currency "0.0.2"
     object-assign "^4.1.1"
 
 currently-unhandled@^0.4.1:
@@ -5047,9 +5047,9 @@ loader-utils@^1.0.1, loader-utils@^1.0.2, loader-utils@^1.1.0:
     emojis-list "^2.0.0"
     json5 "^0.5.0"
 
-locale-currency@0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/locale-currency/-/locale-currency-0.0.1.tgz#c9e15a22ff575b4b4bb947a4bf92ac236bd1fe9b"
+locale-currency@0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/locale-currency/-/locale-currency-0.0.2.tgz#e2c90607563ce47a59f9559e45a70e24e4db4b6d"
 
 locate-path@^2.0.0:
   version "2.0.0"
